@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Migwani Sounds</title>
+
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script src="https://kit.fontawesome.com/676fa46ed1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <div class="logo-label-background">
+        <span class="logo-label" aria-hidden="true">🎵</span>
+      </div>
+      <span class="logo-text">Migwani</span>
+    </div>
+
+    <div class="navigations">
+      <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+
+      <div class="hamburger">
+        <button id="hamburger" aria-label="Toggle menu">
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+          <span class="bar bar3"></span>
+        </button>
+
+        <nav class="mobile-nav">
+          <ul id="mobile-menu" class="hidden">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="upload.html">Upload</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <nav class="main-nav">
+        <ul class="desktop-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="upload.html">Upload</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- === Player Section === -->
+    <section id="player-section" aria-labelledby="featured-tracks-heading">
+      <h2 id="featured-tracks-heading">Featured Tracks</h2>
+      <div id="player-container"></div>
+    </section>
+
+    <!-- === Support Section === -->
+    <section id="support-section" aria-labelledby="support-heading">
+      <h3 id="support-heading">Support Migwani</h3>
+      <button id="buy-coffee-btn" aria-label="Support by buying coffee">☕ Buy Me Coffee</button>
+    </section>
+
+    <!-- === Comment Section === -->
+    <section id="comment-section" aria-labelledby="comments-heading">
+      <h3 id="comments-heading">Leave a Comment</h3>
+      <form id="comment-form">
+        <label for="comment-text" class="sr-only">Your message</label>
+        <textarea id="comment-text" placeholder="Your message..." required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+      <div id="comments-display"></div>
+    </section>
+  </main>
+
+  <!-- === Share Popup === -->
+  <div id="share-popup" class="hidden" role="dialog" aria-modal="true" aria-labelledby="share-title">
+    <div class="popup-content">
+      <p id="share-title">Share this track:</p>
+      <input type="text" id="share-link" readonly />
+      <button id="copy-btn">Copy Link</button>
+      <button id="close-popup" aria-label="Close share popup">&times;</button>
+    </div>
+  </div>
+
+  <script src="/js/main.js" type="module"></script>
+  <script src="/js/player.js" type="module"></script>
+</body>
+</html>

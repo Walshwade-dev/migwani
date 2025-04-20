@@ -1,0 +1,431 @@
+/* ===== Reset & Base Setup ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #1f2937;
+    --accent-color: #6366f1;
+    --button-bg: #10b981;
+    --button-text: #ffffff;
+  }
+  
+  html.dark {
+    --bg-color: #1f2937;
+    --text-color: #f3f4f6;
+    --accent-color: #818cf8;
+    --button-bg: #34d399;
+    --button-text: #1f2937;
+  }
+  
+  /* ===== Global Styles ===== */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  /* ===== Header Styles ===== */
+  header {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  /* ===== Logo ===== */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo-label-background {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(limegreen, orange);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-label {
+    font-size: 1.5rem;
+    height: 2.6rem;
+    width: 2.6rem;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  /* ===== Hamburger Menu ===== */
+  .hamburger, #hamburger {
+    background-color: transparent;
+    border:none;
+  }
+
+  #hamburger {
+    width: 2.5rem;
+    height: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .bar {
+    background-color: green;
+    width: 100%;
+    height: 0.3rem;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hamburger Animation (to X) */
+  #hamburger.open .bar1 {
+    width: 50%;
+    background-color: #ff1919;
+    transform: rotate(45deg) translate(5px, 5px);
+    margin: 0.3rem 0 0 0;
+  }
+  
+  #hamburger.open .bar2 {
+    opacity: 0;
+  }
+  
+  #hamburger.open .bar3 {
+    width: 50%;
+    background-color: #ff1919;
+    margin: 0.3rem 0 0 0;
+    transform: rotate(-45deg) translate(8.7px, -9.1px);
+  }
+  
+  /* ===== Mobile Menu ===== */
+  #mobile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 40%;
+    height: 100vh;
+    background-color: var(--text-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+    z-index: 999;
+  }
+  
+  #mobile-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+
+  a {
+    text-decoration: none;
+    color: var(--bg-color);
+    font-size: 1.3rem;
+    text-shadow: 0 0 1px black;
+  }
+
+  a:focus, a:hover {
+    text-decoration: underline;
+    text-decoration-color: #10b981;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    text-shadow: 0 0 0px #10b981, 0 0 5px #10b981;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  
+  /* ===== Desktop Menu (Hidden on Mobile) ===== */
+  .main-nav {
+    display: none;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  /* ===== Theme Toggle Button (Optional) ===== */
+  #theme-toggle {
+    position: absolute;
+    right: 3.5rem;
+    background-color: transparent;
+    color: var(--button-text);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* ===== Utility ===== */
+  .hidden {
+    display: none;
+  }
+
+  /* ==== Main section ==== */
+  main {
+    padding: 2rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  #player-section h2,
+  #support-section h3,
+  #comment-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  #player-container {
+    display: flex;
+    flex-direction: column;  /* stack vertically by default */
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .video-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 3rem;
+    background-color: var(--text-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-wrapper iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+  }
+  
+  .video-info {
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  
+  .title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    color: var(--bg-color);
+    font-size: 1.1rem;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 0.5rem;
+  }
+  
+  .action-btn {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .action-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .fa-heart.liked {
+    color: red;
+  }
+  
+  .fa-paper-plane.shared {
+    color: blue;
+  }
+  
+  .like-count {
+    font-size: 1rem;
+  }
+  
+  #buy-coffee-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  #buy-coffee-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  #comment-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    resize: vertical;
+  }
+  
+  #comment-form button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  #comments-display {
+    margin-top: 1rem;
+  }
+
+
+  #share-popup.hidden {
+    opacity: 0;
+    display: none;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  
+  #share-popup.show {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80vw;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .popup-content input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .popup-content button {
+    padding: 0.4rem 1rem;
+    border: none;
+    background-color: var(--button-bg);
+    color: white;
+    border-radius: 6px;
+    margin: 0.3rem;
+    cursor: pointer;
+  }
+  
+  .popup-content #close-popup {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background-color: transparent;
+    color: var(--bg-color);
+    font-size: 2rem;
+  }
+  
+  
+  
+  /* ===== Responsive Media Queries ===== */
+  @media (min-width: 768px) {
+    header, main{
+      padding: 0 5rem;
+      margin-bottom: 2.5rem;
+    }
+    .hamburger {
+      display: none;
+    }
+  
+    .main-nav {
+      display: block;
+      margin-right: 2rem;
+    }
+
+    a {
+      color: var(--text-color);
+    }
+  
+    .mobile-nav {
+      display: none;
+    }
+
+    #theme-toggle {
+      top: 1.9rem;
+      right: 2rem;
+      background-color: var(--text-color);
+    }
+    #player-container {
+      flex-direction: row;        /* allow side-by-side layout */
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+  
+    .video-wrapper {
+      width: 30vw;                /* fit two videos per row */
+      max-width: 400px;           /* don't let them get too large */
+    }
+  }
+  
