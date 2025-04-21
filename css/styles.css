@@ -79,7 +79,7 @@
   }
   
   .logo-text {
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: var(--text-color);
     max-width: 2rem;
@@ -452,6 +452,10 @@
   
   /* ===== Responsive Media Queries ===== */
   @media (min-width: 768px) {
+    header {
+      height: 10vh;
+    }
+
     header, main{
       padding: 0 5rem;
       margin-bottom: 2.5rem;
@@ -474,9 +478,13 @@
     }
 
     #theme-toggle {
-      top: 3.5rem;
+      top: 2rem;
       right: 2rem;
       background-color: var(--text-color);
+    }
+
+    .logo {
+      margin-left: 2rem;
     }
 
     .logo-text {
@@ -493,18 +501,20 @@
     }
 
     .hero-content {
+      margin-bottom: 5rem;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
       text-align: left;
     }
   
     .hero-description {
-      font-size: 1.1rem;
-      padding-right: 2rem;
+      font-size: 1.3rem;
+      margin-left: -6rem;
     }
   
     .hero-image {
       max-width: 40%;
+      margin: 2rem;
     }
     /* === Hero section ===  */
 
