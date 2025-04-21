@@ -35,7 +35,7 @@
   
   /* ===== Header Styles ===== */
   header {
-    height: 10vh;
+    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -78,9 +78,10 @@
   }
   
   .logo-text {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: bold;
     color: var(--text-color);
+    max-width: 2rem;
   }
   
   /* ===== Hamburger Menu ===== */
@@ -202,8 +203,15 @@
   }
 
   /* ==== Main section ==== */
+
   main {
-    padding: 2rem;
+    margin: 2rem 0 1rem;
+  }
+
+
+  main > section > h2,
+  main > section > h3 {
+    padding: 0 1rem;
   }
   
   section {
@@ -416,16 +424,28 @@
       right: 2rem;
       background-color: var(--text-color);
     }
+
+    .logo-text {
+      max-width: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+
     #player-container {
-      flex-direction: row;        /* allow side-by-side layout */
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
   
     .video-wrapper {
-      width: 30vw;                /* fit two videos per row */
-      max-width: 400px;           /* don't let them get too large */
+      width: 50vw;
+      max-width: 450px;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      .video-card {
+        box-shadow: 0 0 15px rgba(255, 255, 255,0.5);
     }
   }
-  
+}

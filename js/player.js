@@ -2,11 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("player-container");
   
     const videos = [
-      { id: "HD5Gip-NP4I", title: "Deslavi Vibes" },
-      { id: "mo3wUGXWUGg", title: "Midnight Groove" },
-      { id: "0aMq2K2JJKE", title: "Street Bounce" },
-      { id: "WXN5jOLu72Q", title: "Chill Hop Sunday" }
+      { id:"AM32gC3arEI", title: "Kutumikia maisha" },
+      { id:"fEL_FsY62pY", title: "Yutia ya Ngoo" },
+      { id:"8VzM_jA6HBE", title: "Kwongela Pillow" },
+      { id:"RnGT4ivNrhs", title: "Wendo ni aviator" },
+      { id:"KnG5cYh4d2w", title: "Mikatiko" },
+      { id:"JTCiX7GTHW4", title: "Gambling" },
     ];
+    
   
     videos.forEach(({ id, title }) => {
       const card = document.createElement("div");
