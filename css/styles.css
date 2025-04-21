@@ -206,7 +206,7 @@
   /* ==== Main section ==== */
 
   main {
-    margin: 2rem 0 1rem;
+    margin: 0 auto;
   }
 
 
@@ -215,6 +215,49 @@
   main > section > form {
     padding: 0 1rem;
   }
+
+
+  /* === Hero Section === */
+  #hero {
+    margin: 1.5rem auto 1rem;
+    padding: 0 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #hero-heading {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    margin: 1rem auto;
+    padding: 0.8rem 0;
+    font-size: 1.4rem;
+    font-family: serif;
+    font-weight: bold;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  }
+
+/* === Hero Section === */
   
   section {
     margin-bottom: 2rem;
@@ -423,16 +466,39 @@
     }
 
     #theme-toggle {
-      top: 1.9rem;
+      top: 3.5rem;
       right: 2rem;
       background-color: var(--text-color);
     }
 
     .logo-text {
-      max-width: 1.5rem;
-      font-size: 1.2rem;
+      max-width: 20rem;
+      font-size: 1.5rem;
     }
 
+    /* === Hero section ===  */
+    #hero-heading {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+      padding: 1rem 0;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-content {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  
+    .hero-description {
+      font-size: 1.1rem;
+      padding-right: 2rem;
+    }
+  
+    .hero-image {
+      max-width: 40%;
+    }
+    /* === Hero section ===  */
 
     #player-container {
       display: grid !important;
