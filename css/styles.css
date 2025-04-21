@@ -11,6 +11,7 @@
     --accent-color: #6366f1;
     --button-bg: #10b981;
     --button-text: #ffffff;
+    --button-red: #e71d1d;
   }
   
   html.dark {
@@ -216,49 +217,111 @@
     padding: 0 1rem;
   }
 
+  /* === Hero Section Base Styles === */
+#hero {
+  padding: 2rem 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow: hidden;
+}
 
-  /* === Hero Section === */
-  #hero {
-    margin: 1.5rem auto 1rem;
-    padding: 0 1rem;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    text-align: center;
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+#hero-heading {
+  background-color: var(--text-color);
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--bg-color);
+  margin-bottom: 1rem;
+  padding: 0.5rem 1.3rem;
+}
+
+/* Hero Image */
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.hero-description {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+/* Social Icons */
+.social-icons {
+  height: 3rem;
+  display: flex;
+  gap: 1.3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.social-icons a .fa-youtube:hover {
+  color: var(--button-red);
+}
+
+.social-icons a .fa-facebook:hover {
+  color: var(--accent-color);
+}
+
+/* CTA Button */
+.cta-btn {
+  background-color: transparent;
+  color: var(--button-bg);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  text-decoration-color: #10b981;
+}
+
+
+
+
+/* === Fade In Keyframes === */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  #hero-heading {
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    margin: 1rem auto;
-    padding: 0.8rem 0;
-    font-size: 1.4rem;
-    font-family: serif;
-    font-weight: bold;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-    line-height: 1.4;
-    max-width: 600px;
-    text-align: left;
-  }
-
-  .hero-image {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 1rem;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-  }
-
+}
 /* === Hero Section === */
+
   
   section {
     margin-bottom: 2rem;
@@ -494,27 +557,31 @@
 
     /* === Hero section ===  */
     #hero-heading {
-      background-color: var(--text-color);
-      color: var(--bg-color);
-      padding: 1rem 0;
-      margin: 0 auto 2.5rem;
+      text-align: center;
+      margin-bottom: 6rem;
     }
 
     .hero-content {
-      margin-bottom: 5rem;
-      flex-direction: row;
-      justify-content: space-around;
-      text-align: left;
+      height: 40vh;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
     }
-  
-    .hero-description {
-      font-size: 1.3rem;
-      margin-left: -6rem;
+    
+    .hero-text {
+      margin-left: -8rem;
     }
-  
+
+    .social-icons {
+      display: flex;
+      justify-content: start;
+    }
+    
     .hero-image {
-      max-width: 40%;
-      margin: 2rem;
+      max-width: 400px;
+    }
+    
+    .hero-image img {
       max-width: 450px;
     }
     /* === Hero section ===  */
