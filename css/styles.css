@@ -270,6 +270,13 @@
     font-size: 1.6rem;
     margin-bottom: 1rem;
   }
+
+  #featured-tracks-heading {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    margin: 0 1rem;
+    padding: 0.8rem 1rem;
+  }
   
   #player-container {
     display: flex;
